@@ -21,4 +21,4 @@ if (exponente < 0) {
     console.log('El exponente debe ser mayor o igual a cero.');
 } else {
     const resultado = calcularPotencia (base,exponente);
-    console.log ('El resultado de {base}^{exponente} es: {resultado}')
+    console.log ('El resultado es: ')
