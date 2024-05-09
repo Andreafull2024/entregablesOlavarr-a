@@ -20,5 +20,6 @@ function calcularPotencia (base:number,exponente:number,):number {
 if (exponente < 0) {
     console.log('El exponente debe ser mayor o igual a cero.');
 } else {
-    const resultado = calcularPotencia (base,exponente);
-    console.log ('El resultado es: ')
+    let resultado = calcularPotencia(base, exponente);
+    console.log('El resultado es: ' + resultado);
+}
