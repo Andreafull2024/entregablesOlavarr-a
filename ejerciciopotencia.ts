@@ -1,11 +1,11 @@
 import * as readlineSync from 'readline-sync';
 
-let base : number = readlineSync.questionInt("Ingrese el número de la base: "); 
-let exponente : number = readlineSync.questionInt("Ingrese el número del exponente: "); 
-const resultado= calcularPotencia (base,exponente)
+let base: number = readlineSync.questionInt("Ingrese el número de la base: ");
+let exponente: number = readlineSync.questionInt("Ingrese el número del exponente: ");
+const resultado = calcularPotencia(base, exponente)
 
-function calcularPotencia (base:number,exponente:number,):number {
-    
+function calcularPotencia(base: number, exponente: number,): number {
+
     if (exponente === 0) {
         return 1;
     } else {
