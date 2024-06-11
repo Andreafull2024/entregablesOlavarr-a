@@ -1,0 +1,21 @@
+{
+  "name": "clase_4",
+  "version": "1.0.0",
+  "main": "ejercicio1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json": "^11.0.0",
+    "json-server": "^1.0.0-alpha.23",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "@types/readline-sync": "^1.4.8"
+  },
+  "description": ""
+}
