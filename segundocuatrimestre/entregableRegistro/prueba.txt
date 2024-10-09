@@ -1,0 +1,156 @@
+// Auto.ts
+import { Vehiculo } from './vehiculo';
+
+export class Auto extends Vehiculo {
+    private asientos: number;
+
+    constructor(marca: string, modelo: string, anio: number, asientos: number) {
+        super(marca, modelo, anio, asientos);
+        this.asientos = asientos;
+    }
+
+    public getAsientos(): number {
+        return this.asientos;
+    }
+
+    public setAsientos(asientos: number): void {
+        this.asientos = asientos;
+    }
+}
+
+// Camion.ts
+import { Vehiculo } from './vehiculo';
+
+export class Camion extends Vehiculo {
+    private capacidadCarga: number;
+
+    constructor(marca: string, modelo: string, anio: number, capacidadCarga: number) {
+        super(marca, modelo, anio, capacidadCarga);
+        this.capacidadCarga = capacidadCarga;
+    }
+
+    public getCapacidadCarga(): number {
+        return this.capacidadCarga;
+    }
+
+    public setCapacidadCarga(capacidadCarga: number): void {
+        this.capacidadCarga = capacidadCarga;
+    }
+}
+
+
+// main.ts
+
+import { RegistroAutomotor } from './registroautomotor';
+import { Auto } from './auto';
+import { Moto } from './moto';
+import { Camion } from './camion';
+
+const registro = new RegistroAutomotor();
+
+const auto1 = new Auto("Volkswagen", "Suran", 2020, 4);
+const moto1 = new Moto("Gilera", "Smash", 2021, 1, "Deportiva");
+const camion1 = new Camion("Mercedes", "Actros", 2023, 123456);
+
+registro.agregarVehiculo(auto1);
+registro.agregarVehiculo(moto1);
+registro.agregarVehiculo(camion1);
+
+console.log(registro.getVehiculos());
+
+// Moto.ts
+import { Vehiculo } from './vehiculo';
+
+export class Moto extends Vehiculo {
+    private tipo: string;
+
+    constructor(marca: string, modelo: string, anio: number, asientos: number,tipo: string) {
+        super(marca, modelo, anio, asientos);
+        this.tipo = tipo;
+    }
+
+    public getTipo(): string {
+        return this.tipo;
+    }
+
+    public setTipo(tipo: string): void {
+        this.tipo = tipo;
+    }
+}
+
+// RegistroAutomotor.ts
+import { Auto } from './auto';
+import { Moto } from './moto';
+import { Camion } from './camion';
+
+export class RegistroAutomotor {
+    private vehiculos: (Auto | Moto | Camion | null)[] = [];
+
+    public agregarVehiculo(vehiculo: Auto | Moto | Camion): void {
+        this.vehiculos.push(vehiculo);
+    }
+
+    public modificarVehiculo(index: number, vehiculo: Auto | Moto | Camion): void {
+        if (index >= 0 && index < this.vehiculos.length) {
+            this.vehiculos[index] = vehiculo;
+        }
+    }
+
+    public darDeBaja(index: number): void {
+        if (index >= 0 && index < this.vehiculos.length) {
+            this.vehiculos[index] = null; 
+        }
+    }
+
+    public getVehiculos(): (Auto | Moto | Camion | null)[] {
+        return this.vehiculos;
+    }
+}
+
+
+// Vehiculo.ts
+export class Vehiculo {
+    private marca: string;
+    private modelo: string;
+    private anio: number;
+    private patente: number;
+
+    constructor(marca: string, modelo: string, anio: number, patente: number) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+        this.patente = patente;
+    }
+
+    public getMarca(): string {
+        return this.marca;
+    }
+
+    public setMarca(marca: string): void {
+        this.marca = marca;
+    }
+
+    public getModelo(): string {
+        return this.modelo;
+    }
+
+    public setModelo(modelo: string): void {
+        this.modelo = modelo;
+    }
+
+    public getAnio(): number {
+        return this.anio;
+    }
+
+    public setAnio(anio: number): void {
+        this.anio = anio;
+    }
+
+    public getPatente(): number {
+        return this.anio;
+    }
+
+    public setPatente(anio: number): void {
+        this.anio = anio;
+    }
+}

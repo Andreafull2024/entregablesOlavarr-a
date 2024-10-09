@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Vehiculo = void 0;
-// Vehiculo.ts
 var Vehiculo = /** @class */ (function () {
-    function Vehiculo(marca, modelo, anio) {
+    function Vehiculo(marca, modelo, anio, tipo) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
+        this.tipo = tipo;
     }
     Vehiculo.prototype.getMarca = function () {
         return this.marca;
@@ -25,6 +25,12 @@ var Vehiculo = /** @class */ (function () {
     };
     Vehiculo.prototype.setAnio = function (anio) {
         this.anio = anio;
+    };
+    Vehiculo.prototype.getTipo = function () {
+        return this.tipo;
+    };
+    Vehiculo.prototype.setTipo = function (tipo) {
+        this.tipo = tipo;
     };
     return Vehiculo;
 }());

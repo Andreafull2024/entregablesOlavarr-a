@@ -1,15 +1,14 @@
-// Vehiculo.ts
 export class Vehiculo {
     private marca: string;
     private modelo: string;
     private anio: number;
-    private patente: number;
+    private tipo: string;
 
-    constructor(marca: string, modelo: string, anio: number, patente: number) {
+    constructor(marca: string, modelo: string, anio: number, tipo: string) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
-        this.patente = patente;
+        this.tipo = tipo;
     }
 
     public getMarca(): string {
@@ -36,11 +35,11 @@ export class Vehiculo {
         this.anio = anio;
     }
 
-    public getPatente(): number {
-        return this.anio;
+    public getTipo(): string {
+        return this.tipo;
     }
 
-    public setPatente(anio: number): void {
-        this.anio = anio;
+    public setTipo(tipo: string): void {
+        this.tipo = tipo;
     }
 }

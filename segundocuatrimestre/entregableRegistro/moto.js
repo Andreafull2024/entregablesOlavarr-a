@@ -1,36 +1,21 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Moto = void 0;
-// Moto.ts
 var vehiculo_1 = require("./vehiculo");
-var Moto = /** @class */ (function (_super) {
-    __extends(Moto, _super);
-    function Moto(marca, modelo, anio, tipo) {
-        var _this = _super.call(this, marca, modelo, anio) || this;
-        _this.tipo = tipo;
-        return _this;
+var Moto = /** @class */ (function () {
+    function Moto(marca, modelo, anio, ruedas) {
+        this.vehiculo = new vehiculo_1.Vehiculo(marca, modelo, anio, "Moto");
+        this.ruedas = ruedas;
     }
-    Moto.prototype.getTipo = function () {
-        return this.tipo;
+    Moto.prototype.getVehiculo = function () {
+        return this.vehiculo;
     };
-    Moto.prototype.setTipo = function (tipo) {
-        this.tipo = tipo;
+    Moto.prototype.getRuedas = function () {
+        return this.ruedas;
+    };
+    Moto.prototype.setRuedas = function (ruedas) {
+        this.ruedas = ruedas;
     };
     return Moto;
-}(vehiculo_1.Vehiculo));
+}());
 exports.Moto = Moto;

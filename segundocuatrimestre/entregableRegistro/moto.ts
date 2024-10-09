@@ -1,19 +1,23 @@
-// Moto.ts
 import { Vehiculo } from './vehiculo';
 
-export class Moto extends Vehiculo {
-    private tipo: string;
+export class Moto {
+    private vehiculo: Vehiculo;
+    private ruedas: number;
 
-    constructor(marca: string, modelo: string, anio: number, asientos: number,tipo: string) {
-        super(marca, modelo, anio, asientos);
-        this.tipo = tipo;
+    constructor(marca: string, modelo: string, anio: number, ruedas: number) {
+        this.vehiculo = new Vehiculo(marca, modelo, anio, "Moto");
+        this.ruedas = ruedas;
     }
 
-    public getTipo(): string {
-        return this.tipo;
+    public getVehiculo(): Vehiculo {
+        return this.vehiculo;
     }
 
-    public setTipo(tipo: string): void {
-        this.tipo = tipo;
+    public getRuedas(): number {
+        return this.ruedas;
+    }
+
+    public setRuedas(ruedas: number): void {
+        this.ruedas = ruedas;
     }
 }

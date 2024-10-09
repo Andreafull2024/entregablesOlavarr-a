@@ -1,12 +1,16 @@
-// Camion.ts
 import { Vehiculo } from './vehiculo';
 
-export class Camion extends Vehiculo {
+export class Camion {
+    private vehiculo: Vehiculo;
     private capacidadCarga: number;
 
     constructor(marca: string, modelo: string, anio: number, capacidadCarga: number) {
-        super(marca, modelo, anio, capacidadCarga);
+        this.vehiculo = new Vehiculo(marca, modelo, anio, "Camion");
         this.capacidadCarga = capacidadCarga;
+    }
+
+    public getVehiculo(): Vehiculo {
+        return this.vehiculo;
     }
 
     public getCapacidadCarga(): number {

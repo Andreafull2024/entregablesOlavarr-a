@@ -1,19 +1,23 @@
-// Auto.ts
 import { Vehiculo } from './vehiculo';
 
-export class Auto extends Vehiculo {
-    private asientos: number;
+export class Auto {
+    private vehiculo: Vehiculo;
+    private puertas: number;
 
-    constructor(marca: string, modelo: string, anio: number, asientos: number) {
-        super(marca, modelo, anio, asientos);
-        this.asientos = asientos;
+    constructor(marca: string, modelo: string, anio: number, puertas: number) {
+        this.vehiculo = new Vehiculo(marca, modelo, anio, "Auto");
+        this.puertas = puertas;
     }
 
-    public getAsientos(): number {
-        return this.asientos;
+    public getVehiculo(): Vehiculo {
+        return this.vehiculo;
     }
 
-    public setAsientos(asientos: number): void {
-        this.asientos = asientos;
+    public getPuertas(): number {
+        return this.puertas;
+    }
+
+    public setPuertas(puertas: number): void {
+        this.puertas = puertas;
     }
 }
